@@ -1,0 +1,10 @@
+
+public class Wohnort {
+
+	int plz;
+	int hausnummer;
+	String 
+	
+	
+	
+}

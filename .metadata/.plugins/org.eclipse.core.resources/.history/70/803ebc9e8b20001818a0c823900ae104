@@ -1,0 +1,9 @@
+
+public class PersonVW {
+
+	public static void main(String[] args) {
+		Personenen Manu= new Personenen(3, "Manuel", "Ebenbitchler");
+
+	}
+
+}

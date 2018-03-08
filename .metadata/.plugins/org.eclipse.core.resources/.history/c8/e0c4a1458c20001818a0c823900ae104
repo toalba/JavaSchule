@@ -1,0 +1,41 @@
+
+public class Wohnort {
+
+	int plz;
+	int hausnummer;
+	String Strasse;
+	String Ort;
+	
+	public void setPLZ(int plz)
+	{
+		this.plz=plz;
+	}
+	public void setHausnummer(int hausnummer)
+	{
+		this.hausnummer=hausnummer;
+	}
+	public void setStrasse(String Strasse)
+	{
+		this.Strasse=Strasse;
+	}
+	public void setOrt(String Ort)
+	{
+		this.Ort=Ort;
+	}
+	public int getPLZ()
+	{
+		return plz;
+	}
+	public int getHausnummer()
+	{
+		return hausnummer;
+	}
+	public String getOrt()
+	{
+		return Ort;
+	}
+	public String getStrasse()
+	{
+		return Strasse;
+	}
+}
