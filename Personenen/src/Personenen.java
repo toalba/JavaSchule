@@ -6,11 +6,12 @@ public class Personenen {
 	int alter;
 	Wohnort wohnort;
 	
-	public Personenen(int alt,String Vn,String Nn)
+	public Personenen(int alt,String Vn,String Nn, Wohnort Wohn)
 	{
 		Vorname=Vn;
 		Nachname=Nn;
 		alter=alt;
+		wohnort=Wohn;
 	}
 	public Wohnort getWohnort()
 	{
