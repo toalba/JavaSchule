@@ -12,6 +12,7 @@ public class Song {
 	public void ausgabe()
 	{
 		System.out.printf("Titel: %s Länge: %f",titel,laenge);
+		System.out.println();
 	}
 	
 
