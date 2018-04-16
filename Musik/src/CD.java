@@ -37,15 +37,6 @@ public class CD {
         songs[loeschPos] = songs[pos-1];
         loeschen();       
     }
-	  public void loeschen2(int loeschPos)
-	    {
-	        for (int i = loeschPos; i < pos; i++)
-	        {
-	            songs[i] = songs[i+1];
-	           
-	        }
-	        loeschen();
-	    }
 
 
 

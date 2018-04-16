@@ -31,7 +31,16 @@ public class Musikverwaltung {
 	public void loeschen(int loeschPos)
     {
         cds[loeschPos] = cds[pos-1];
-        loeschen();       
+        loeschen();       	  public void loeschen2(int loeschPos)
+	    {
+	        for (int i = loeschPos; i < pos; i++)
+	        {
+	            songs[i] = songs[i+1];
+	           
+	        }
+	        loeschen();
+	    }
+
     }
 	  public void loeschen2(int loeschPos)
 	    {
@@ -58,6 +67,10 @@ public class Musikverwaltung {
 		camora.addsong(gc);
 		
 		acdc.ausgabe();
+		camora.ausgabe();
+		camora.loeschen(2);
+		System.out.println();
+		System.out.println();
 		camora.ausgabe();
 		
 		
