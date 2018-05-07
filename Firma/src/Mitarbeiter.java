@@ -5,11 +5,11 @@ public class Mitarbeiter {
 	private String Nachname;
 	private String Abteilung;
 	 enum STELLUNG{LEITER,ARBEITER};
-	private double Monate;
+	private int Monate;
 	STELLUNG s;
 	
 	
-	public Mitarbeiter(String Vn,String Nn,String A,STELLUNG s,double m)
+	public Mitarbeiter(String Vn,String Nn,String A,STELLUNG s,int m)
 	{
 		this.Vorname=Vn;
 		this.Nachname=Nn;
