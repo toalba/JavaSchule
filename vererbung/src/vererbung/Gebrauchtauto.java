@@ -8,7 +8,7 @@ public class Gebrauchtauto extends auto{
 		super(leistung,farbe);
 		this.baujahr=baujahr;
 	}
-
+	
 	public int getBaujahr() {
 		return baujahr;
 	}
@@ -20,7 +20,7 @@ public class Gebrauchtauto extends auto{
 	public void ausgabe()
 	{
 		super.ausgabe();
-		System.out.printf("Baujahr:%d",baujahr);
+		System.out.printf(" Baujahr:%d",baujahr);
 	}
 
 	public static void main(String[]args)
