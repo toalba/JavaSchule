@@ -21,6 +21,8 @@ public class Kunden extends personen {
 	{
 		super.ausgabe();
 		System.out.printf("Kundenummer: %d", kundennummer);
+		
+		
 	}
 
 }
