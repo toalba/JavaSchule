@@ -40,6 +40,8 @@ public class Bank {
 		System.out.println("Betrag!");
 		double i= Integer.parseInt(s.nextLine());
 		k1.ueberweisung(i,k2);
+		System.out.println("Es bleiben übrig:");
+		a1.getsaldo();
 
 	}
 
