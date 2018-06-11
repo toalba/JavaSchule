@@ -21,12 +21,27 @@ public class ausgabe {
 			c1.ausgabe();
 			System.out.println();
 		}
+		ArrayList<personen> person= new ArrayList<personen>();
+		person.addAll(Fkunde);
+		person.add(b2);
+		person.add(b1);
+		person.add(a2);
+		person.add(a1);
 		
+		for (int i = 0; i < person.size(); i++) {
+			 personen c1 =person.get(i);
+				c1.ausgabe();
+				System.out.println();
+		}
 		
 		a1.ausgabe();
 		a2.ausgabe();
 		b1.ausgabe();
-		b2.ausgabe();
+        b2.ausgabe();
+        
+        
+        
 	}
+	
 
 }
