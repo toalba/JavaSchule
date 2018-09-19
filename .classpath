@@ -13,5 +13,6 @@
 	<classpathentry kind="src" path="setgetthise/src"/>
 	<classpathentry kind="src" path="vererbung/src"/>
 	<classpathentry kind="src" path="Sanduhr"/>
+	<classpathentry kind="src" path="Wiederholungbsp"/>
 	<classpathentry kind="output" path="Chinaeinwohner/bin"/>
 </classpath>
