@@ -1,7 +1,7 @@
 
 public class Wochentag {
 	
-	static String[] Datum = {
+	static String[] Tag = {
 			""
 			
 	}
