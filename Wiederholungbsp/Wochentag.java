@@ -5,13 +5,13 @@ public class Wochentag {
 	static void berrechnung(int tag,int monat, int jahr)
 	{
 		int[] Monat_k= {-1,1,4,4,0,2,5,0,3,6,1,4,6};
-		int[] Jahr_k= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,6,4};
+		int[] Jahr_k= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,6,4};
 		String[] Wochentage= {"Sa","So","Mo","Di","Mi","Do","Fr"};
 		
 		int step;
 		//Step 1
 		
-		step = jahr+jahr%10;
+		step = jahr+jahr%100;
 		 int jahrvorne= jahr/100;
 		
 		//Step 2
@@ -28,7 +28,7 @@ public class Wochentag {
 		
 		//Step 5
 		
-		if(jahr%4==0 && monat==1|| monat==2)
+		if(jahr%4==0 && (monat==1|| monat==2))
 		{
 			step--;
 			
@@ -57,7 +57,7 @@ public class Wochentag {
 		
 		berrechnung(tag,monat,jahr);
 
-	
+	s.close();
 		
 		
 
