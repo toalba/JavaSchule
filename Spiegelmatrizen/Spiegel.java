@@ -8,7 +8,7 @@ public class Spiegel {
 		
 		
 		for (int i = 0; i < matriz.length; i++) {
-			for (int j = b; j > 0; j--) {
+			for (int j = b-1; j >= 0; j--) {
 				int k=0;
 				spiegelmatriz[i][k++]= matriz[i][j];
 			}
@@ -20,13 +20,15 @@ public class Spiegel {
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz[0].length; j++) {
 				System.out.print(matriz[i][j]);
+				System.out.print(" ");
 			}
 			System.out.println();
 		}
-		System.out.println("###############################################################");
+		System.out.println("###################################");
 		for (int i = 0; i < spiegelmatriz.length; i++) {
 			for (int j = 0; j < spiegelmatriz[0].length; j++) {
 				System.out.print(spiegelmatriz[i][j]);
+				System.out.print(" ");
 			}
 			System.out.println();
 		}
