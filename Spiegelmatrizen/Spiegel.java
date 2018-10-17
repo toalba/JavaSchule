@@ -1,9 +1,46 @@
 
 public class Spiegel {
+	
+	static boolean[][] mirror(int a, int b, boolean[][] matriz)
+	{
+
+		boolean[][] spiegelmatriz= new boolean[a][b];
+		
+		
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = b; j > 0; j--) {
+				int k=0;
+				spiegelmatriz[i][k++]= matriz[i][j];
+			}
+		}
+		return spiegelmatriz;
+	}
+	static void ausgabe(boolean[][] matriz , boolean[][] spiegelmatriz)
+	{
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[0].length; j++) {
+				System.out.print(matriz[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.println("###############################################################");
+		for (int i = 0; i < spiegelmatriz.length; i++) {
+			for (int j = 0; j < spiegelmatriz[0].length; j++) {
+				System.out.print(spiegelmatriz[i][j]);
+			}
+			System.out.println();
+		}
+	}
+	
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		boolean[][] matriz={{true,true,true},{false,true,false},{true,false,true}};
+		
+		boolean[][]spiegelmatriz=mirror(3,3,matriz);
+		ausgabe(matriz,spiegelmatriz);
 
+		
 	}
 
 }
