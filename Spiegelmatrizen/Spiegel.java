@@ -8,8 +8,9 @@ public class Spiegel {
 		
 		
 		for (int i = 0; i < matriz.length; i++) {
+			int k=0;
 			for (int j = b-1; j >= 0; j--) {
-				int k=0;
+				
 				spiegelmatriz[i][k++]= matriz[i][j];
 			}
 		}
