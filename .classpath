@@ -16,5 +16,6 @@
 	<classpathentry kind="src" path="Wiederholungbsp"/>
 	<classpathentry kind="src" path="Spiegelmatrizen"/>
 	<classpathentry kind="src" path="todolist"/>
+	<classpathentry kind="src" path="Interface"/>
 	<classpathentry kind="output" path="Chinaeinwohner/bin"/>
 </classpath>

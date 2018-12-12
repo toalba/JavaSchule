@@ -57,7 +57,7 @@ public class StarkesPW {
 	}
 	
 	public static void main(String[] args) {
-		String pw = "";
+		String pw = "erichstoff45";
 		boolean strong = isStrong(pw);
 		System.out.printf("%s", strong);
 

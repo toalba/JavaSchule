@@ -10,10 +10,11 @@ public class Sanduhr {
 			
 			  
 			while(width<=a){
-				  
+
 				  int einrücken=(a-width)/2;
 				  
 				     for (int i=0;einrücken>i;i++) 
+
 				     {
 				    	 System.out.print(" ");
 						
