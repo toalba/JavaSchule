@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="Chinaeinwohner/src"/>
-	<classpathentry kind="src" path="Firma/src"/>
-	<classpathentry kind="src" path="Firma2.0/src"/>
-	<classpathentry kind="src" path="Geometrischeformen/src"/>
-	<classpathentry kind="src" path="Musik/src"/>
-	<classpathentry kind="src" path="Namen/src"/>
-	<classpathentry kind="src" path="Personenen/src"/>
-	<classpathentry kind="src" path="programmieren erklären/src"/>
-	<classpathentry kind="src" path="Raiffeisenbank/src"/>
-	<classpathentry kind="src" path="setgetthise/src"/>
-	<classpathentry kind="src" path="vererbung/src"/>
-	<classpathentry kind="src" path="Sanduhr"/>
-	<classpathentry kind="src" path="Wiederholungbsp"/>
-	<classpathentry kind="src" path="Spiegelmatrizen"/>
-	<classpathentry kind="src" path="todolist"/>
-	<classpathentry kind="src" path="Interface"/>
-	<classpathentry kind="output" path="Chinaeinwohner/bin"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>
