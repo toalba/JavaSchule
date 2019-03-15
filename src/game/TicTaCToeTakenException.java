@@ -3,9 +3,6 @@ package game;
 public class TicTaCToeTakenException extends Exception {
 
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public TicTaCToeTakenException(String arg0) {

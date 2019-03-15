@@ -37,80 +37,26 @@ public class TicTacToe {
 			i++;
 		}
 	}
-
-	/**
-	 * ein "X" soll an der angef�hrten Position eingetragen werden. Sollte
-	 * das Spiel dadurch beendet sein, wird "true" retourniert - ansonsten 
-	 * "false". Bei einer fehlerhaften Nutzereingabe wird eine Fehlermeldung
-	 * direkt ausgegeben.
-	 */
-	public boolean insertCrossAt(int x, int y) {
-
-		brett[x][y] = XorO.X;
-		if (checkEnd()) {
-			return true;
-		}
-		return false;		//Das Spiel geht weiter
-	}
-
-	/**
-	 * ein "O" soll an der angef�hrten Position eingetragen werden. Sollte
-	 * das Spiel dadurch beendet sein, wird "true" retourniert - ansonsten 
-	 * "false". Bei einer fehlerhaften Nutzereingabe wird eine Fehlermeldung
-	 * direkt ausgegeben.
-	 */
-	public boolean insertCircleAt(int x, int y) {
-
-		try {
-			if (brett[x][y] != null) {
-				throw new TicTaCToeTakenException("Bereits besetzt");
-			}
-		brett[x][y] = XorO.O;
-		if (checkEnd()) {
-			return true;
-		}
-			return false;		//Das Spiel geht weiter
-	
+	public boolean insertAt(int x, int y, boolean Spieler) throws TicTaCToeTakenException {
 		
+		if (brett[x][y] != null) {
+			return false;
 		}
-		catch(TicTaCToeTakenException e)
+		
+		if(Spieler)
 		{
-		System.out.println("Bereitsbesetzt");
-			
+			brett[x][y] = XorO.X;
 		}
-		return false;
+		else if(!Spieler)
+		{
+			brett[x][y] = XorO.O;
+		}
+		
+		return true;
 	}
-	
-		
-	
-	/**
-	 * An der Stelle x,y soll ein "X" oder "O" eingetragen werden; es ist
-	 * zu pr�fen, ob die Indizes grunds�tzlich im Brett sind und ob das
-	 * angesprochene Feld auch leer ist.
-	 * @throws TicTaCToeTakenException 
-	 */
-//	private void checkXY(int x, int y) throws TicTaCToeTakenException {
-//try {
-//		if (brett[x][y] != null) {
-//			throw new TicTaCToeTakenException("Bereits besetzt");
-			//System.out.println("ERROR: Feld ist bereits besetzt!!!");
-			
-		
-//	}
-//		catch(TicTaCToeTakenException e)
-//		{
-//			System.out.println("Feld besetzt");
-	
 
-//		}
-//	}
-	
-	/**
-	 * Es wirt gepr�ft ob in einer Zeile, Spalte oder Diagonale sich 3
-	 * gleiche "XorOs" befinden. Wenn ja - wird "true"
-	 * retourniert - ansonsten "false"; Sollten alle Felder bereits
-	 * besetzt sein, so ist das Spiel ebenfalls aus.
-	 */
+
+
 	private boolean checkEnd() {
 		//alle Felder besetzt?
 		int anzahl = 0;
