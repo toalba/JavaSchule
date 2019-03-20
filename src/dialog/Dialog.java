@@ -9,7 +9,6 @@ public class Dialog {
 	 * Die main-Methode f�hrt den Dialog f�r das TicTacToe-Spiel. Es wird solange
 	 * gespielt bis entweder alle Felder voll sind oder eine Reihe von gleichen
 	 * Strings eingetragen wurde.
-	 * 
 	 * @param args keine Verwendung
 	 */
 	public static void main(String[] args) throws TicTaCToeTakenException {
@@ -19,10 +18,9 @@ public class Dialog {
 		System.out.println("Willkommen zum TicTacToe der HTL-Anichstrasse!");
 		ttt.printBrett();
 		System.out.println("Geben sie ihre Koordinaten in der Form 'x y' ein!");
-		boolean ende = false;
 		boolean player = true;
 		Spieler spieler = Spieler.CROSS; // CROSS beginnt
-		while (!ende) {
+		while (!ttt.checkEnd()) {
 			if (player) {
 				spieler = Spieler.CROSS;
 			} else if (!player) {
@@ -31,9 +29,13 @@ public class Dialog {
 			System.out.print("Spieler " + spieler + ": ");
 			String eingabe = scan.nextLine();
 			String[] zahlen = eingabe.split(" ");
+			if(ttt.checkEnd())
+				{
+					System.out.println("Spiel zu Ende");
+				}
 			try {
-				int x = new Integer(zahlen[0]);
-				int y = new Integer(zahlen[1]);
+				int y = new Integer(zahlen[0]);
+				int x = new Integer(zahlen[1]);
 
 				if (!ttt.insertAt(x, y, player)) {
 					throw new TicTaCToeTakenException("Bereits besetzt");
@@ -42,10 +44,7 @@ public class Dialog {
 					player = !player;
 
 				}
-				if(checkEnd())
-				{
-					System.out.println("Spiel zu Ende");
-				}
+
 				ttt.printBrett();
 			} catch (java.lang.ArrayIndexOutOfBoundsException e) {
 				System.out.println("Die Eingabe ist falsch formatiert oder zuhoch");

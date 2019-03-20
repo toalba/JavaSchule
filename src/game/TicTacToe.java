@@ -19,7 +19,6 @@ public class TicTacToe {
 	 *  Die Darstellung des Brettes am Bildschirm
 	 */
 	public void printBrett() {
-		System.out.println("    0   1   2");
 		System.out.println("  +---+---+---+");
 		int i = 0;	//i-te Zeile
 		for (XorO[] zeile : brett) {
@@ -36,6 +35,7 @@ public class TicTacToe {
 			System.out.println("  +---+---+---+");
 			i++;
 		}
+		System.out.println("    0   1   2");
 	}
 	public boolean insertAt(int x, int y, boolean Spieler) throws TicTaCToeTakenException {
 		
@@ -57,7 +57,7 @@ public class TicTacToe {
 
 
 
-	private boolean checkEnd() {
+	public boolean checkEnd() {
 		//alle Felder besetzt?
 		int anzahl = 0;
 		for (XorO[] zeile : brett) {

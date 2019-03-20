@@ -1,0 +1,143 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - External Terminal",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "mainClass": ""
+        },
+        
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Dialog<9. Uebung - TicTacToe>",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "mainClass": "dialog.Dialog",
+            "projectName": "9. Uebung - TicTacToe"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Pathtest<9. Uebung - TicTacToe>",
+            "request": "launch",
+            "mainClass": "dialog.Pathtest",
+            "projectName": "9. Uebung - TicTacToe"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Bruch<Chinaeinwohner>",
+            "request": "launch",
+            "mainClass": "Bruch",
+            "projectName": "Chinaeinwohner"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LandVW<Chinaeinwohner>",
+            "request": "launch",
+            "mainClass": "LandVW",
+            "projectName": "Chinaeinwohner"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Uhrzeit<Chinaeinwohner>",
+            "request": "launch",
+            "mainClass": "Uhrzeit",
+            "projectName": "Chinaeinwohner"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-test<Chinaeinwohner>",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "Chinaeinwohner"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ausgabe<Firma2.0>",
+            "request": "launch",
+            "mainClass": "ausgabe",
+            "projectName": "Firma2.0"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-test<Firma>",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "Firma"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Figurenverwaltung<Geometrischeformen>",
+            "request": "launch",
+            "mainClass": "Figurenverwaltung",
+            "projectName": "Geometrischeformen"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-geometrie<Geometrischeformen>",
+            "request": "launch",
+            "mainClass": "geometrie",
+            "projectName": "Geometrischeformen"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Test<Musik>",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "Musik"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Testmusik<Musik>",
+            "request": "launch",
+            "mainClass": "Testmusik",
+            "projectName": "Musik"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-NamenVW<Namen>",
+            "request": "launch",
+            "mainClass": "NamenVW",
+            "projectName": "Namen"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PersonVW<Personenen>",
+            "request": "launch",
+            "mainClass": "PersonVW",
+            "projectName": "Personenen"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Bank<Raiffeisenbank>",
+            "request": "launch",
+            "mainClass": "Bank",
+            "projectName": "Raiffeisenbank"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-shsg<programmieren erklären>",
+            "request": "launch",
+            "mainClass": "shsg",
+            "projectName": "programmieren erklären"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Gebrauchtauto<vererbung>",
+            "request": "launch",
+            "mainClass": "vererbung.Gebrauchtauto",
+            "projectName": "vererbung"
+        }
+    ]
+}
