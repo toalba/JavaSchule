@@ -6,7 +6,7 @@ package game;
  * eingetragen werden kann. Die Eintr�ge werden in einer Matrix
  * verwaltet.
  * 
- * @author DI Martin Kampenhuber
+ * @author DI Martin Kampenhuber, Verbessert von Torben Baumgartner
  * @version 1.0
  */
 public class TicTacToe {
