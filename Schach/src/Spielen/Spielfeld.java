@@ -5,7 +5,7 @@ public class Spielfeld extends Feld {
     private boolean weramzug; //weiß startet
 
     public Spielfeld() {
-
+        
 
 
     }
