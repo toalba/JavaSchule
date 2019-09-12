@@ -15,24 +15,14 @@ public class Give {
 
     public void gettoHand()
     {
-        
-      
-
         for(int i = 0; i<handrange;i++)
         {
-            int lenght = cardDeck.length - thrownCards;
-            int thrownCards= 0;
+            int lenght = cardDeck.length - i;
             int random = (int)(Math.random()*lenght);
             
             hand[i]= cardDeck[random];
-            cardDeck[random]=cardDeck[cardDeck.length-thrownCards];
-            thrownCards++;
-
-
+            cardDeck[random]=cardDeck[cardDeck.length-i];
         }
-
-
-
     }
 
 
