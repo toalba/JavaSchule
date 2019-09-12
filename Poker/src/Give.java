@@ -26,7 +26,7 @@ public class Give {
         }
     }
      //Section 2 ---Work in Progress
-    private boolean[][] handMat= new int[4][13];
+    private boolean[][] handMat= new boolean[4][13];
     public void decode()
     {
         //zahl%13= kartenummer
@@ -39,7 +39,13 @@ public class Give {
     }
     public void pair()
     {
-        
+        for(int i=0;i<4;i++)
+        {
+            for(int j=0;j<13;j++)
+             {
+
+             }
+        }
     }
 
 }
