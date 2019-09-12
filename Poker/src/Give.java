@@ -5,6 +5,7 @@ public class Give {
     private int[] cardDeck= new int[51];
     private int[] hand = new int[handrange];
     
+    //Section 1 -- Done
     public void fill()
     {
         for(int i=0;i<cardDeck.length;i++)
@@ -24,6 +25,11 @@ public class Give {
             cardDeck[random]=cardDeck[cardDeck.length-i];
         }
     }
+     //Section 2 ---Work in Progress
 
+    public void controlCards()
+    {
+        
+    }
 
 }
