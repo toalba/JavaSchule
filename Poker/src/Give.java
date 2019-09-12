@@ -26,8 +26,18 @@ public class Give {
         }
     }
      //Section 2 ---Work in Progress
+    private boolean[][] handMat= new int[4][13];
+    public void decode()
+    {
+        //zahl%13= kartenummer
+        //zahl/13= farbe
+        for(int i=0;i<hand.length;i++)
+        {
+            handMat[hand[i]/13][hand[i]%13]= true;
+        }
 
-    public void controlCards()
+    }
+    public void pair()
     {
         
     }
