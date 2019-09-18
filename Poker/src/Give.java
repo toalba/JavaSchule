@@ -25,8 +25,8 @@ public class Give {
             cardDeck[random]=cardDeck[cardDeck.length-i];
         }
     }
-     //Section 2 ---Work in Progress
-    private boolean[][] handMat= new boolean[4][13];
+     //Section 2 --- Nearly Done
+    private boolean[][] handMat= new boolean[13][4];
     public void decode()
     {
         //zahl%13= kartenummer
@@ -37,15 +37,77 @@ public class Give {
         }
 
     }
-    public void pair()
+    //Section 3 --- Analyze
+    public int pair()
     {
-        for(int i=0;i<4;i++)
+        int pairs=0;
+        int tripple=0;
+        int doublePair=0;
+        int fullHouse=0;
+        int fourOfKind=0;
+        decode();
+        for(int i=0;i<13;i++)
         {
-            for(int j=0;j<13;j++)
+            int counter=0;
+            for(int j=0;j<4;j++)
              {
-
+                if(handMat[i][j])
+                {
+                    counter++;
+                }
+             }
+             if(counter==2)
+             {  
+                pairs++;
+             }
+             else if(counter==3)
+             {
+                tripple++;
+             }
+             else if(counter==4)
+             {
+                 fourOfKind++;
+                 return fourOfKind;
              }
         }
+        if(pairs==2)
+        {
+            doublePair++;
+            pairs=0;
+            return doublePair;
+        }
+        if(tripple==1 && pairs==1)
+        {
+            fullHouse++;
+            pairs=0;
+            tripple=0;
+            return fullHouse;
+        }
+        if(tripple==1)
+        {
+            return tripple;
+        }
+        if(pairs==1);
+        {
+        return pairs;
+        }
     }
+    public boolean flush()
+    {
+        decode();
+        for(int i=0;i<13;i++)
+        {
+            int[] flush=new int[handrange];
+            for(int j=0;j<4;j++)
+             {
+                if(handMat[i][j])
+                {
+                    
+                }
+             }
+        }
+        return false;
+}}
 
-}
+
+
