@@ -94,19 +94,32 @@ public class Give {
     }
     public boolean flush()
     {
-        decode();
-        for(int i=0;i<13;i++)
-        {
+        
+        boolean i;
             int[] flush=new int[handrange];
-            for(int j=0;j<4;j++)
+            for(int j=0;j<=handrange;j++)
              {
-                if(handMat[i][j])
-                {
-                    
-                }
+                flush[j]=hand[j]/13;
              }
+             for(int j=0;j<handrange;j++)
+             {
+
+                 if(flush[j]==flush[j+1])
+                 {
+                    i=true;
+                 }
+                 else
+                 {
+                     i=false;
+                 }
+             }
+        if(i)
+        {
+            return true;
         }
+        else{
         return false;
+        }
 }}
 
 
