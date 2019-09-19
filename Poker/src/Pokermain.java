@@ -15,6 +15,12 @@ public class Pokermain {
 		int straightflushCounter=0;
 		int royalflush=0;
 
+
+		for(int i=0;i<analyticTimes;i++)
+		{
+			gg.gettoHand();
+		}
+
 	}
 
 }
