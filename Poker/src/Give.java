@@ -37,6 +37,30 @@ public class Give {
         }
 
     }
+    
+        //Bubblesort
+    public int[] handST = new int[handrange];
+    public int[] bubbleSort()
+    {
+        for(int i=0;i<hand.length;i++)
+        {
+            handST[i]=hand[i]%13;
+        }
+        int temp;
+        for(int i=0;i<hand.length;i++)
+        {
+            if(hand[i]>hand[i+1])
+            {
+                temp=handST[i];
+                handST[i]=handST[i+1];
+                handST[i+1]=temp;
+                bubbleSort();
+            }
+        }
+
+        return handST;
+
+    }
     //Section 3 --- Analyze
     public int pair()
     {
@@ -120,7 +144,41 @@ public class Give {
         else{
         return false;
         }
-}}
+    }
+    public boolean straight()
+    {
+        boolean a;
+        bubbleSort();
+        for(int i=0;i<handST.length;i++)
+        {
+            if(handST[i]+1==handST[i+1])
+            {
+                a=true;
+            }
+            else
+            {
+                a=false;
+            }
+
+            
+        }
+        if(a)
+        {
+            return true;
+        }
+        return false;   
+    }
+    public boolean straightFlushCeck()
+    {
+
+        if(flush()&&straight())
+        {
+            return true;
+        }
+        return false;
+    }
+
+}   
 
 
 
