@@ -177,7 +177,16 @@ public class Give {
         }
         return false;
     }
+    public boolean royalFlush()
+    {
 
+    
+        if(flush()&&straight()&& hand[0]%13==7)
+        {   
+            return true;
+        }
+        return false;
+    }
 }   
 
 

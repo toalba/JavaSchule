@@ -2,8 +2,9 @@
 public class Pokermain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Give gg =new Give(); 
+		int analyticTimes=1000;
+		
 	}
 
 }
