@@ -16,6 +16,7 @@ public class Give {
 
     public void gettoHand()
     {
+        fill();
         for(int i = 0; i<handrange;i++)
         {
             int lenght = cardDeck.length - i;
@@ -112,7 +113,6 @@ public class Give {
     }
     public boolean flush()
     {
-        
         boolean i=false;
             int[] flush=new int[handrange];
             for(int j=0;j<=handrange;j++)
@@ -125,6 +125,10 @@ public class Give {
                  if(flush[j]==flush[j+1])
                  {
                     i=true;
+                 }
+                 else
+                 {
+                     i=false;
                  }
              }
         if(i)
@@ -154,7 +158,7 @@ public class Give {
     }
     public boolean straightFlushCeck()
     {
-
+        
         if(flush()&&straight())
         {
             return true;
