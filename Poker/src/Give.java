@@ -17,7 +17,7 @@ public class Give {
     public void gettoHand()
     {
         fill();
-        for(int i = 0; i<handrange;i++)
+        for(int i = 0; i<=handrange;i++)
         {
             int lenght = cardDeck.length - i;
             int random = (int)(Math.random()*lenght);
@@ -26,7 +26,7 @@ public class Give {
             cardDeck[random]=cardDeck[cardDeck.length-i];
         }
     }
-     //Section 2 --- Nearly Done
+     //Section 2 ---  Done
     private boolean[][] handMat= new boolean[13][4];
     public void decode()
     {
@@ -63,7 +63,7 @@ public class Give {
 
     }
     //Section 3 --- Analyze
-    public String pair() // wird in StringReturn gemacht
+    public String pair() 
     {
         int pairs=0;
         int tripple=0;
@@ -142,7 +142,7 @@ public class Give {
     public boolean straight()
     {
         boolean a=false;
-        bubbleSort();                        // hier noch ASS mit 13 und 0 einsetzten
+        bubbleSort();                        //Ass 13 && Ass 0 missing
         for(int i=0;i<handST.length;i++)
         {
             if(handST[i]+1==handST[i+1])
@@ -158,7 +158,7 @@ public class Give {
     }
     public boolean straightFlushCeck()
     {
-        
+
         if(flush()&&straight())
         {
             return true;
