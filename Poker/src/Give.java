@@ -119,7 +119,7 @@ public class Give {
     public boolean flush()
     {
         
-        boolean i;
+        boolean i=false;
             int[] flush=new int[handrange];
             for(int j=0;j<=handrange;j++)
              {
@@ -132,10 +132,6 @@ public class Give {
                  {
                     i=true;
                  }
-                 else
-                 {
-                     i=false;
-                 }
              }
         if(i)
         {
@@ -147,20 +143,14 @@ public class Give {
     }
     public boolean straight()
     {
-        boolean a;
-        bubbleSort();
+        boolean a=false;
+        bubbleSort();                        // hier noch ASS mit 13 und 0 einsetzten
         for(int i=0;i<handST.length;i++)
         {
             if(handST[i]+1==handST[i+1])
             {
                 a=true;
-            }
-            else
-            {
-                a=false;
-            }
-
-            
+            }    
         }
         if(a)
         {
@@ -179,8 +169,6 @@ public class Give {
     }
     public boolean royalFlush()
     {
-
-    
         if(flush()&&straight()&& hand[0]%13==7)
         {   
             return true;

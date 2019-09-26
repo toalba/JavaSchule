@@ -19,6 +19,7 @@ public class Pokermain {
 		for(int i=0;i<analyticTimes;i++)
 		{
 			gg.gettoHand();
+			gg.pair();
 		}
 
 	}
