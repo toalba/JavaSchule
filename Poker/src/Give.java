@@ -1,8 +1,9 @@
+import java.util.Arrays;
 
 public class Give {
 
     private static int handrange = 5;
-    private int[] cardDeck= new int[51];
+    private int[] cardDeck= new int[52];
     private int[] hand = new int[handrange];
     
     //Section 1 -- Done
@@ -17,22 +18,23 @@ public class Give {
     public void gettoHand()
     {
         fill();
-        for(int i = 0; i<=handrange;i++)
+        for(int i = 0; i<handrange;i++)
         {
-            int lenght = cardDeck.length - i;
-            int random = (int)(Math.random()*lenght);
+            int maxidx = cardDeck.length - i -1;
+            int random = (int)(Math.random()*maxidx);
             
             hand[i]= cardDeck[random];
-            cardDeck[random]=cardDeck[cardDeck.length-i];
+            cardDeck[random]=cardDeck[maxidx];
+            
         }
     }
      //Section 2 ---  Done
-    private boolean[][] handMat= new boolean[13][4];
+    private boolean[][] handMat= new boolean[4][13];
     public void decode()
     {
         //zahl%13= kartenummer
         //zahl/13= farbe
-        for(int i=0;i<hand.length;i++)
+        for(int i=0;i<hand.length-1;i++)
         {
             handMat[hand[i]/13][hand[i]%13]= true;
         }
@@ -40,28 +42,28 @@ public class Give {
     }
     
         //Bubblesort
-    public int[] handST = new int[handrange];
-    public int[] bubbleSort()
-    {
-        for(int i=0;i<hand.length;i++)
-        {
-            handST[i]=hand[i]%13;
-        }
-        int temp;
-        for(int i=0;i<hand.length;i++)
-        {
-            if(hand[i]>hand[i+1])
-            {
-                temp=handST[i];
-                handST[i]=handST[i+1];
-                handST[i+1]=temp;
-                bubbleSort();
-            }
-        }
+    // public int[] handST = new int[handrange];
+    // public int[] bubbleSort()
+    // {
+    //     for(int i=0;i<hand.length;i++)
+    //     {
+    //         handST[i]=hand[i]%13;
+    //     }
+    //     int temp;
+    //     for(int i=0;i<hand.length;i++)
+    //     {
+    //         if(hand[i]>hand[i+1])
+    //         {
+    //             temp=handST[i];
+    //             handST[i]=handST[i+1];
+    //             handST[i+1]=temp;
+    //             bubbleSort();
+    //         }
+    //     }
 
-        return handST;
+    //     return handST;
 
-    }
+    // }
     //Section 3 --- Analyze
     public String pair() 
     {
@@ -73,7 +75,7 @@ public class Give {
             int counter=0;
             for(int j=0;j<4;j++)
              {
-                if(handMat[i][j])
+                if(handMat[j][i])
                 {
                     counter++;
                 }
@@ -115,11 +117,11 @@ public class Give {
     {
         boolean i=false;
             int[] flush=new int[handrange];
-            for(int j=0;j<=handrange;j++)
+            for(int j=0;j<handrange;j++)
              {
                 flush[j]=hand[j]/13;
              }
-             for(int j=0;j<handrange;j++)
+             for(int j=0;j<handrange-1;j++)
              {
 
                  if(flush[j]==flush[j+1])
@@ -142,10 +144,10 @@ public class Give {
     public boolean straight()
     {
         boolean a=false;
-        bubbleSort();                        //Ass 13 && Ass 0 missing
-        for(int i=0;i<handST.length;i++)
+        Arrays.sort(hand);                       
+        for(int i=0;i<hand.length-1;i++)
         {
-            if(handST[i]+1==handST[i+1])
+            if(hand[i]+1==hand[i+1])
             {
                 a=true;
             }    

@@ -58,7 +58,7 @@ public class Pokermain {
 				case "tripple":
 				trippleCounter++;
 				break;
-				case "pair":
+				case "pairs":
 				pairCounter++;
 				default:
 				highcardCounter++;
@@ -66,8 +66,12 @@ public class Pokermain {
 			}
 			}
 		}
+		System.out.println(highcardCounter);
+		System.out.println(pairCounter);
 
 		// Analytics
+		// Controll
+		System.out.println(highcardCounter+pairCounter+trippleCounter+doublePairCounter+fourthCounter+flushCounter+fullHouseCounter+straightCounter+straightflushCounter+royalflush);
 
 	}
 
