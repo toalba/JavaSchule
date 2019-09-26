@@ -62,13 +62,10 @@ public class Give {
 
     }
     //Section 3 --- Analyze
-    public int pair()
+    public String pair() // wird in StringReturn gemacht
     {
         int pairs=0;
         int tripple=0;
-        int doublePair=0;
-        int fullHouse=0;
-        int fourOfKind=0;
         decode();
         for(int i=0;i<13;i++)
         {
@@ -90,30 +87,27 @@ public class Give {
              }
              else if(counter==4)
              {
-                 fourOfKind++;
-                 return fourOfKind;
+                 return "fourOfKind";
              }
         }
         if(pairs==2)
         {
-            doublePair++;
             pairs=0;
-            return doublePair;
+            return "doublePair";
         }
         if(tripple==1 && pairs==1)
         {
-            fullHouse++;
             pairs=0;
             tripple=0;
-            return fullHouse;
+            return "fullHouse";
         }
         if(tripple==1)
         {
-            return tripple;
+            return "tripple";
         }
         if(pairs==1);
         {
-        return pairs;
+        return "pairs";
         }
     }
     public boolean flush()
