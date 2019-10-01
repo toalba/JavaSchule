@@ -3,7 +3,7 @@ public class Pokermain {
 
 	public static void main(String[] args) {
 		Give gg =new Give(); 
-		int analyticTimes=1000;
+		int analyticTimes=10000;
 		// Kartencounter
 		int highcardCounter=0;
 		int pairCounter=0;
@@ -15,14 +15,14 @@ public class Pokermain {
 		int straightCounter=0;
 		int straightflushCounter=0;
 		int royalflush=0;
-		String returnString;
+		
 
 
 		for(int i=0;i<analyticTimes;i++)
 		{
 			boolean abbr= true;
 			gg.gettoHand();
-			returnString=gg.pair();
+			
 			if(gg.royalFlush() && abbr)
 			{
 				royalflush++;
@@ -44,6 +44,7 @@ public class Pokermain {
 				abbr=false;
 			}
 			if(abbr){
+		    String returnString=gg.pair();
 			switch(returnString)
 			{
 				case "fourOfKind":
@@ -60,7 +61,7 @@ public class Pokermain {
 				break;
 				case "pairs":
 				pairCounter++;
-				default:
+				case "highCard":
 				highcardCounter++;
 
 			}
@@ -72,7 +73,7 @@ public class Pokermain {
 		// Analytics
 		// Controll
 		System.out.println(highcardCounter+pairCounter+trippleCounter+doublePairCounter+fourthCounter+flushCounter+fullHouseCounter+straightCounter+straightflushCounter+royalflush);
-
+		System.out.println(flushCounter*100/analyticTimes);
 	}
 
 }

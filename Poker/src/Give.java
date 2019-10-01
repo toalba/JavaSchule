@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class Give {
 
@@ -21,7 +22,8 @@ public class Give {
         for(int i = 0; i<handrange;i++)
         {
             int maxidx = cardDeck.length - i -1;
-            int random = (int)(Math.random()*maxidx);
+            Random generator = new Random(System.currentTimeMillis());
+            int random = generator.nextInt(52-i);
             
             hand[i]= cardDeck[random];
             cardDeck[random]=cardDeck[maxidx];
@@ -34,9 +36,9 @@ public class Give {
     {
         //zahl%13= kartenummer
         //zahl/13= farbe
-        for(int i=0;i<hand.length-1;i++)
+        for(int i=0;i<=hand.length-1;i++)
         {
-            handMat[hand[i]/13][hand[i]%13]= true;
+           handMat[hand[i]/13][hand[i]%13]= true;       
         }
 
     }
@@ -98,7 +100,7 @@ public class Give {
             pairs=0;
             return "doublePair";
         }
-        if(tripple==1 && pairs==1)
+        if((tripple==1) && (pairs==1))
         {
             pairs=0;
             tripple=0;
@@ -108,11 +110,14 @@ public class Give {
         {
             return "tripple";
         }
-        if(pairs==1);
+        if(pairs==1)
         {
         return "pairs";
         }
-    }
+        else
+        {
+        return "highcard";
+    }}
     public boolean flush()
     {
         boolean i=false;
@@ -144,7 +149,7 @@ public class Give {
     public boolean straight()
     {
         boolean a=false;
-        Arrays.sort(hand);                       
+        Arrays.sort(hand);                       //Ass 13 && Ass 0 missing
         for(int i=0;i<hand.length-1;i++)
         {
             if(hand[i]+1==hand[i+1])
@@ -169,7 +174,7 @@ public class Give {
     }
     public boolean royalFlush()
     {
-        if(flush()&&straight()&& hand[0]%13==7)
+        if(flush()&&straight()&& (hand[0]%13==7))
         {   
             return true;
         }
