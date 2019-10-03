@@ -43,81 +43,9 @@ public class Give {
 
     }
     
-        //Bubblesort
-    // public int[] handST = new int[handrange];
-    // public int[] bubbleSort()
-    // {
-    //     for(int i=0;i<hand.length;i++)
-    //     {
-    //         handST[i]=hand[i]%13;
-    //     }
-    //     int temp;
-    //     for(int i=0;i<hand.length;i++)
-    //     {
-    //         if(hand[i]>hand[i+1])
-    //         {
-    //             temp=handST[i];
-    //             handST[i]=handST[i+1];
-    //             handST[i+1]=temp;
-    //             bubbleSort();
-    //         }
-    //     }
-
-    //     return handST;
-
-    // }
+  
     //Section 3 --- Analyze
-    public String pair() 
-    {
-        int pairs=0;
-        int tripple=0;
-        decode();
-        for(int i=0;i<13;i++)
-        {
-            int counter=0;
-            for(int j=0;j<4;j++)
-             {
-                if(handMat[j][i])
-                {
-                    counter++;
-                }
-             }
-             if(counter==2)
-             {  
-                pairs++;
-             }
-             else if(counter==3)
-             {
-                tripple++;
-             }
-             else if(counter==4)
-             {
-                 return "fourOfKind";
-             }
-        }
-        if(pairs==2)
-        {
-            pairs=0;
-            return "doublePair";
-        }
-        if((tripple==1) && (pairs==1))
-        {
-            pairs=0;
-            tripple=0;
-            return "fullHouse";
-        }
-        if(tripple==1)
-        {
-            return "tripple";
-        }
-        if(pairs==1)
-        {
-        return "pairs";
-        }
-        else
-        {
-        return "highcard";
-    }}
+
     public boolean flush()
     {
         boolean i=false;
@@ -149,7 +77,7 @@ public class Give {
     public boolean straight()
     {
         boolean a=false;
-        Arrays.sort(hand);                       //Ass 13 && Ass 0 missing
+        Arrays.sort(hand);                       
         for(int i=0;i<hand.length-1;i++)
         {
             if(hand[i]+1==hand[i+1])
@@ -176,6 +104,106 @@ public class Give {
     {
         if(flush()&&straight()&& (hand[0]%13==7))
         {   
+            return true;
+        }
+        return false;
+    }
+    public boolean onePair()
+    {
+        decode();
+        for(int i=0;i<13;i++)
+        {
+            int counter=0;
+            for(int j=0;j<4;j++)
+             {
+                if(handMat[j][i])
+                {
+                    counter++;
+                }
+                if(counter==2)
+                {  
+                   return true;
+                }
+             }
+
+        }
+        return false;
+
+    }
+    public boolean tripple()
+    {
+       
+        for(int i=0;i<13;i++)
+        {
+            int counter=0;
+            for(int j=0;j<4;j++)
+             {
+                if(handMat[j][i])
+                {
+                    counter++;
+                }
+                if(counter==3)
+                {  
+                   return true;
+                }
+             }
+
+        }
+        return false;
+
+    }
+    public boolean Squad()
+    {
+      
+        for(int i=0;i<13;i++)
+        {
+            int counter=0;
+            for(int j=0;j<4;j++)
+             {
+                if(handMat[j][i])
+                {
+                    counter++;
+                }
+                if(counter==4)
+                {  
+                   return true;
+                }
+             }
+
+        }
+        return false;
+    }
+    public boolean doublePair()
+    {
+        int pair=0;
+       
+        for(int i=0;i<13;i++)
+        {
+            int counter=0;
+            for(int j=0;j<4;j++)
+             {
+                
+                if(handMat[j][i])
+                {
+                    counter++;
+                }
+                if(counter==2)
+                {  
+                   pair++;
+                }
+             }
+
+        }
+        if(pair==2)
+        {
+            return true;
+        }
+        return false;
+    }
+    public boolean fullHouse()
+    {
+        if(tripple()&&onePair())
+        {
             return true;
         }
         return false;

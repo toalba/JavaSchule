@@ -2,24 +2,25 @@
 public class Pokermain {
 
 	public static void main(String[] args) {
-		Give gg =new Give(); 
-		int analyticTimes=10000;
+		
+		double analyticTimes=100000;
 		// Kartencounter
-		int highcardCounter=0;
-		int pairCounter=0;
-		int trippleCounter=0;
-		int fourthCounter=0;
-		int doublePairCounter=0;
-		int fullHouseCounter=0;
-		int flushCounter=0;
-		int straightCounter=0;
-		int straightflushCounter=0;
-		int royalflush=0;
+		double highcardCounter=0;
+		double pairCounter=0;
+		double trippleCounter=0;
+		double squadCounter=0;
+		double doublePairCounter=0;
+		double fullHouseCounter=0;
+		double flushCounter=0;
+		double straightCounter=0;
+		double straightflushCounter=0;
+		double royalflush=0;
 		
 
 
 		for(int i=0;i<analyticTimes;i++)
 		{
+			Give gg =new Give(); 
 			boolean abbr= true;
 			gg.gettoHand();
 			
@@ -43,53 +44,64 @@ public class Pokermain {
 				straightCounter++;
 				abbr=false;
 			}
-			if(abbr){
-		    String returnString=gg.pair();
-			switch(returnString)
+			if(gg.Squad()&& abbr){
+				
+				squadCounter++;
+				abbr=false;
+			}
+			if(gg.fullHouse()&& abbr)
 			{
-				case "fourOfKind":
-				fourthCounter++;
-				break;
-				case "doublePair":
-				doublePairCounter++;							
-				break;
-				case "fullHouse":
-				fullHouseCounter++;
-				break;
-				case "tripple":
+				flushCounter++;
+				abbr=false;
+			}
+			if(gg.doublePair()&& abbr)
+			{
+				doublePairCounter++;
+				abbr=false;
+			}
+			if(gg.tripple()&& abbr)
+			{
 				trippleCounter++;
-				break;
-				case "pairs":
+				abbr=false;
+			}
+			if(gg.onePair()&& abbr)
+			{
 				pairCounter++;
-				case "highCard":
+				abbr=false;
+			}
+			if(abbr)
+			{
 				highcardCounter++;
-
+				abbr= false;
 			}
-			}
+			
 		}
 
 		// Analytics
 		// Controll
-	
-		System.out.printf("Flush:%d",(flushCounter*100)/analyticTimes);
+		System.out.print("Anzahl an Versuche:");
+		System.out.println(analyticTimes);
+		System.out.print("Gesamtanzahl:");
+		System.out.println(flushCounter+straightCounter+straightflushCounter+pairCounter+trippleCounter+royalflush+doublePairCounter+highcardCounter+fullHouseCounter+squadCounter);
+		System.out.printf("Flush:%f",(flushCounter*100)/analyticTimes);
 		System.out.println("%");
-		System.out.printf("Straight:%d",(straightCounter*100)/analyticTimes);
+		System.out.printf("Straight:%f",(straightCounter*100)/analyticTimes);
 		System.out.println("%");
-		System.out.printf("Pairs:%d",(pairCounter*100)/analyticTimes);
+		System.out.printf("Pairs:%f",(pairCounter*100)/analyticTimes);
 		System.out.println("%");
-		System.out.printf("Tripple: %d",trippleCounter*100/analyticTimes);
+		System.out.printf("Tripple: %f",trippleCounter*100/analyticTimes);
 		System.out.println("%");
-		System.out.printf("RoyalFlush: %d",royalflush*100/analyticTimes);
+		System.out.printf("RoyalFlush: %f",royalflush*100/analyticTimes);
 		System.out.println("%");
-		System.out.printf("Doublepair: %d",doublePairCounter*100/analyticTimes);
+		System.out.printf("Doublepair: %f",doublePairCounter*100/analyticTimes);
 		System.out.println("%");
-		System.out.printf("HighCard: %d",highcardCounter*100/analyticTimes);
+		System.out.printf("HighCard: %f",highcardCounter*100/analyticTimes);
 		System.out.println("%");
-		System.out.printf("Fullhouse: %d",fullHouseCounter*100/analyticTimes);
+		System.out.printf("Fullhouse: %f",fullHouseCounter*100/analyticTimes);
 		System.out.println("%");
-		System.out.printf("Squad: %d",fourthCounter*100/analyticTimes);
+		System.out.printf("Squad: %f",squadCounter*100/analyticTimes);
 		System.out.println("%");
-		System.out.printf("StraightFlush: %d", straightflushCounter*100/analyticTimes);
+		System.out.printf("StraightFlush: %f", straightflushCounter*100/analyticTimes);
 		System.out.println("%");
 
 	}
