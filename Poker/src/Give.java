@@ -5,8 +5,8 @@ public class Give {
 
     private static int handrange = 5;
     private int[] cardDeck= new int[52];
-    private int[] hand = new int[handrange];
-    
+    //private int[] hand = new int[handrange];
+    private int[] hand = {42,29,16,33,1};
     //Section 1 -- Done
     public void fill()
     {
@@ -25,10 +25,11 @@ public class Give {
             Random generator = new Random(System.currentTimeMillis());
             int random = generator.nextInt(52-i);
             
-            hand[i]= cardDeck[random];
-            cardDeck[random]=cardDeck[maxidx];
+           // hand[i]= cardDeck[random];
+           // cardDeck[random]=cardDeck[maxidx];
             
         }
+        decode();
     }
      //Section 2 ---  Done
     private boolean[][] handMat= new boolean[4][13];
@@ -66,13 +67,7 @@ public class Give {
                      i=false;
                  }
              }
-        if(i)
-        {
-            return true;
-        }
-        else{
-        return false;
-        }
+             return i;
     }
     public boolean straight()
     {
@@ -85,32 +80,19 @@ public class Give {
                 a=true;
             }    
         }
-        if(a)
-        {
-            return true;
-        }
-        return false;   
+        return a;
     }
     public boolean straightFlushCeck()
     {
-
-        if(flush()&&straight())
-        {
-            return true;
-        }
-        return false;
+        return flush()&&straight();
     }
     public boolean royalFlush()
     {
-        if(flush()&&straight()&& (hand[0]%13==7))
-        {   
-            return true;
-        }
-        return false;
+        return flush()&&straight()&&(hand[0]%13==7);
     }
     public boolean onePair()
     {
-        decode();
+        
         for(int i=0;i<13;i++)
         {
             int counter=0;
@@ -202,11 +184,7 @@ public class Give {
     }
     public boolean fullHouse()
     {
-        if(tripple()&&onePair())
-        {
-            return true;
-        }
-        return false;
+        return tripple()&&onePair();
     }
 }   
 

@@ -16,8 +16,6 @@ public class Pokermain {
 		double straightflushCounter=0;
 		double royalflush=0;
 		
-
-
 		for(int i=0;i<analyticTimes;i++)
 		{
 			Give gg =new Give(); 
@@ -74,7 +72,6 @@ public class Pokermain {
 				highcardCounter++;
 				abbr= false;
 			}
-			
 		}
 
 		// Analytics
