@@ -67,13 +67,31 @@ public class Pokermain {
 			}
 			}
 		}
-		System.out.println(highcardCounter);
-		System.out.println(pairCounter);
 
 		// Analytics
 		// Controll
-		System.out.println(highcardCounter+pairCounter+trippleCounter+doublePairCounter+fourthCounter+flushCounter+fullHouseCounter+straightCounter+straightflushCounter+royalflush);
-		System.out.println(flushCounter*100/analyticTimes);
+	
+		System.out.printf("Flush:%d",(flushCounter*100)/analyticTimes);
+		System.out.println("%");
+		System.out.printf("Straight:%d",(straightCounter*100)/analyticTimes);
+		System.out.println("%");
+		System.out.printf("Pairs:%d",(pairCounter*100)/analyticTimes);
+		System.out.println("%");
+		System.out.printf("Tripple: %d",trippleCounter*100/analyticTimes);
+		System.out.println("%");
+		System.out.printf("RoyalFlush: %d",royalflush*100/analyticTimes);
+		System.out.println("%");
+		System.out.printf("Doublepair: %d",doublePairCounter*100/analyticTimes);
+		System.out.println("%");
+		System.out.printf("HighCard: %d",highcardCounter*100/analyticTimes);
+		System.out.println("%");
+		System.out.printf("Fullhouse: %d",fullHouseCounter*100/analyticTimes);
+		System.out.println("%");
+		System.out.printf("Squad: %d",fourthCounter*100/analyticTimes);
+		System.out.println("%");
+		System.out.printf("StraightFlush: %d", straightflushCounter*100/analyticTimes);
+		System.out.println("%");
+
 	}
 
 }
