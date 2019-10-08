@@ -1,3 +1,4 @@
+package poker;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -5,8 +6,8 @@ public class Give {
 
     private static int handrange = 5;
     private int[] cardDeck= new int[52];
-    //private int[] hand = new int[handrange];
-    private int[] hand = {42,29,16,33,1};
+    private int[] hand = new int[handrange];
+    
     //Section 1 -- Done
     public void fill()
     {
@@ -25,8 +26,8 @@ public class Give {
             Random generator = new Random(System.currentTimeMillis());
             int random = generator.nextInt(52-i);
             
-           // hand[i]= cardDeck[random];
-           // cardDeck[random]=cardDeck[maxidx];
+            hand[i]= cardDeck[random];
+            cardDeck[random]=cardDeck[maxidx];
             
         }
         decode();
@@ -64,18 +65,22 @@ public class Give {
                  }
                  else
                  {
-                     i=false;
+                     return i;
                  }
-             }
-             return i;
+                 
+            }
+            return i;
+
     }
     public boolean straight()
     {
         boolean a=false;
-        Arrays.sort(hand);                       
-        for(int i=0;i<hand.length-1;i++)
+        int[] sortet = new int [hand.length];
+        sortet=hand;
+        Arrays.sort(sortet);                       
+        for(int i=0;i<sortet.length-1;i++)
         {
-            if(hand[i]+1==hand[i+1])
+            if(sortet[i]+1==sortet[i+1])
             {
                 a=true;
             }    
@@ -134,7 +139,7 @@ public class Give {
         return false;
 
     }
-    public boolean Squad()
+    public boolean squad()
     {
       
         for(int i=0;i<13;i++)
