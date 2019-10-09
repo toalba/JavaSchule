@@ -8,6 +8,13 @@
             "type": "java",
             "name": "CodeLens (Launch) - Pokermain",
             "request": "launch",
+            "mainClass": "poker.Pokermain",
+            "projectName": "Poker"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Pokermain",
+            "request": "launch",
             "mainClass": "main.Pokermain",
             "projectName": "Poker"
         },
