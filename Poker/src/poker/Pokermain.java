@@ -4,7 +4,7 @@ public class Pokermain {
 
 	public static void main(String[] args) {
 		
-		double analyticTimes=100000;
+		double analyticTimes=10000000;
 		// Kartencounter
 		double highcardCounter=0;
 		double pairCounter=0;
@@ -33,6 +33,11 @@ public class Pokermain {
 				straightflushCounter++;
 				abbr=false;
 			}
+			if(gg.squad()&& abbr){
+				
+				squadCounter++;
+				abbr=false;
+			}
 			if(gg.flush() && abbr)
 			{
 				flushCounter++;
@@ -43,11 +48,7 @@ public class Pokermain {
 				straightCounter++;
 				abbr=false;
 			}
-			if(gg.squad()&& abbr){
-				
-				squadCounter++;
-				abbr=false;
-			}
+
 			if(gg.fullHouse()&& abbr)
 			{
 				fullHouseCounter++;

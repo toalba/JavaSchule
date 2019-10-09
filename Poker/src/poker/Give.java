@@ -7,8 +7,8 @@ public class Give {
     private static int handrange = 5;
     private int[] cardDeck= new int[52];
     private int[] hand = new int[handrange];
-    
-    //Section 1 -- Done
+    //private int[] hand ={5,2,3,6,4};
+   // Section 1 -- Done
     public void fill()
     {
         for(int i=0;i<cardDeck.length;i++)
@@ -65,6 +65,7 @@ public class Give {
                  }
                  else
                  {
+                     i=false;
                      return i;
                  }
                  
@@ -76,14 +77,23 @@ public class Give {
     {
         boolean a=false;
         int[] sortet = new int [hand.length];
-        sortet=hand;
+        for(int i=0;i<hand.length;i++)
+        {
+        sortet[i]=hand[i]%13;
+        }
         Arrays.sort(sortet);                       
         for(int i=0;i<sortet.length-1;i++)
         {
-            if(sortet[i]+1==sortet[i+1])
+            
+            if((sortet[i]%13)+1==sortet[i+1]%13)
             {
                 a=true;
-            }    
+            }
+            else
+            {
+                a=false;
+                return a;
+            }   
         }
         return a;
     }
@@ -174,10 +184,10 @@ public class Give {
                 {
                     counter++;
                 }
-                if(counter==2)
-                {  
-                   pair++;
-                }
+             }
+             if(counter==2)
+             {  
+                pair++;
              }
 
         }
@@ -189,8 +199,38 @@ public class Give {
     }
     public boolean fullHouse()
     {
-        return tripple()&&onePair();
+        int pair=0;
+        int tripple=0;
+        for(int i=0;i<13;i++)
+        {
+            int counter=0;
+            for(int j=0;j<4;j++)
+             {
+                
+                if(handMat[j][i])
+                {
+                    counter++;
+                }
+             }
+             if(counter==2)
+             {  
+                pair++;
+             }
+             if(counter==3)
+             {
+                 tripple++;
+                 
+             }
+
+
+        }
+        if(pair==1&&tripple==1)
+        {
+            return true;
+        }
+        return false;
     }
+    
 }   
 
 
