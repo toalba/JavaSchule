@@ -1,7 +1,7 @@
 package poker;
 
 public class Analytic{
-    private double analyticTimes=10000000;
+    private double analyticTimes;
     private double highcardCounter=0;
     private double pairCounter=0;
     private double trippleCounter=0;
@@ -12,6 +12,11 @@ public class Analytic{
     private double straightCounter=0;
     private double straightflushCounter=0;
     private double royalflush=0;
+
+	public Analytic(double analyticTimes) {
+		this.analyticTimes = analyticTimes;
+	}
+
 
     public void analyse()
     {
@@ -88,7 +93,7 @@ public class Analytic{
 		System.out.println("%");
 		System.out.printf("Tripple: %f",(trippleCounter*100)/analyticTimes);
 		System.out.println("%");
-		System.out.printf("RoyalFlush: %f",(royalflush*100)/analyticTimes);
+		System.out.printf("RoyalFlush: %f",(royalflush*1000)/analyticTimes);
 		System.out.println("%");
 		System.out.printf("Doublepair: %f",(doublePairCounter*100)/analyticTimes);
 		System.out.println("%");
@@ -98,9 +103,11 @@ public class Analytic{
 		System.out.println("%");
 		System.out.printf("Squad: %f",(squadCounter*100)/analyticTimes);
 		System.out.println("%");
-		System.out.printf("StraightFlush: %f", (straightflushCounter*100)/analyticTimes);
+		System.out.printf("StraightFlush: %f", ((straightflushCounter+royalflush)*100)/analyticTimes);
 		System.out.println("%");
     }
+
+
     
 
 

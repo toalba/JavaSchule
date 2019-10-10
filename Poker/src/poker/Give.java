@@ -25,6 +25,7 @@ public class Give {
             int maxidx = cardDeck.length - i -1;
             Random generator = new Random(System.currentTimeMillis());
             int random = generator.nextInt(52-i);
+            //int random= (int)Math.random()*maxidx;
             
             hand[i]= cardDeck[random];
             cardDeck[random]=cardDeck[maxidx];
@@ -85,7 +86,7 @@ public class Give {
         for(int i=0;i<sortet.length-1;i++)
         {
             
-            if((sortet[i]%13)+1==sortet[i+1]%13)
+            if((sortet[i]+1)==sortet[i+1])
             {
                 a=true;
             }
@@ -99,15 +100,14 @@ public class Give {
     }
     public boolean straightFlushCeck()
     {
-        return flush()&&straight();
+        return flush()&& straight();
     }
     public boolean royalFlush()
     {
         return flush()&&straight()&&(hand[0]%13==7);
     }
     public boolean onePair()
-    {
-        
+    { 
         for(int i=0;i<13;i++)
         {
             int counter=0;
