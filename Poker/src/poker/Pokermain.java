@@ -9,7 +9,7 @@ public class Pokermain {
 		Scanner s = new Scanner(System.in);
 		System.out.println("Geben Sie die Anzahl der Versuche ein, je höher desto genauer und desto länger braucht das Programm");
 		int analytictimes= s.nextInt();
-
+		
 		Analytic Game = new Analytic(analytictimes);
 		//Analyse
 		timeNeed=System.currentTimeMillis();

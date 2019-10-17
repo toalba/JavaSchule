@@ -106,13 +106,13 @@ public class Give {
     {
         return flush()&&straight()&&(hand[0]%13==7);
     }
-    public boolean onePair()
+   public boolean onePair()
     { 
         for(int i=0;i<13;i++)
         {
             int counter=0;
             for(int j=0;j<4;j++)
-             {
+            {
                 if(handMat[j][i])
                 {
                     counter++;
@@ -121,12 +121,12 @@ public class Give {
                 {  
                    return true;
                 }
-             }
+            }
 
         }
         return false;
 
-    }
+   }
     public boolean tripple()
     {
        
@@ -224,12 +224,92 @@ public class Give {
 
 
         }
-        if(pair==1&&tripple==1)
+        if(checkpairs()&&tripple==1)
         {
             return true;
         }
         return false;
     }
+    public int pairs()
+    {
+        int[] amount = new int[13];
+        for(int i=0;i<=hand.length-1;i++)
+        {
+           amount[hand[i]/13]++;       
+        }
+        int pairs = 0;
+		for (int i = 0; i < 13; i++) {
+			if (amount[i] >= 2) {
+				pairs++;
+            }
+        }
+        return pairs;
+    }
+    public boolean checkpairs()
+    {
+        if(pairs()==1)
+        {
+            return true;
+        }
+        return false;
+    }
+    public boolean ceckdoublepair()
+    {
+        if(pairs()==2)
+        {
+            return true;
+        }
+        return false;
+    } 
+    public int tripples()
+    {
+        int[] amount = new int[13];
+        for(int i=0;i<=hand.length-1;i++)
+        {
+           amount[hand[i]/13]++;       
+        }
+        int tripples = 0;
+		for (int i = 0; i < 13; i++) {
+			if (amount[i] == 3) {
+				tripples++;
+            }
+        }
+        return tripples;
+    }
+    public int squads()
+    {
+        int[] amount = new int[13];
+        for(int i=0;i<=hand.length-1;i++)
+        {
+           amount[hand[i]/13]++;       
+        }
+        int tripples = 0;
+		for (int i = 0; i < 13; i++) {
+			if (amount[i] == 4) {
+				tripples++;
+            }
+        }
+        return tripples;
+    }
+    public boolean checktripple()
+    {
+        if(tripples()==1)
+        {
+            return true;
+        }
+        return false;
+
+    } 
+    public boolean cecksquad()
+    {
+        if(squads()==1)
+        {
+            return true;
+        }
+        return false;
+
+    } 
+    
     
 }   
 

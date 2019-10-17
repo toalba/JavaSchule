@@ -67,7 +67,7 @@ public class Analytic{
 				trippleCounter++;
 				abbr=false;
 			}
-			if(gg.onePair()&& abbr)
+			if(gg.checkpairs()&& abbr)
 			{
 				pairCounter++;
 				abbr=false;
@@ -89,7 +89,7 @@ public class Analytic{
 		System.out.println("%");
 		System.out.printf("Straight:%f",(straightCounter*100)/analyticTimes);
 		System.out.println("%");
-		System.out.printf("Pairs:%f",(pairCounter*100)/analyticTimes);
+		System.out.printf("Pairs:%f",((highcardCounter*100)/analyticTimes));
 		System.out.println("%");
 		System.out.printf("Tripple: %f",(trippleCounter*100)/analyticTimes);
 		System.out.println("%");
@@ -97,7 +97,7 @@ public class Analytic{
 		System.out.println("%");
 		System.out.printf("Doublepair: %f",(doublePairCounter*100)/analyticTimes);
 		System.out.println("%");
-		System.out.printf("HighCard: %f",(highcardCounter*100)/analyticTimes);
+		System.out.printf("HighCard: %f",(pairCounter*100)/analyticTimes);
 		System.out.println("%");
 		System.out.printf("Fullhouse: %f",(fullHouseCounter*100)/analyticTimes);
 		System.out.println("%");
