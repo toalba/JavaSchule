@@ -7,7 +7,8 @@ public class Tesla extends Auto{
     @Override
     public void fahren()
     {
-        System.out.print("Ich fahre:");
-        System.out.println(speed);
+        System.out.print("Ich fahre: ");
+        System.out.print(speed);
+        System.out.println(" km/h");
     }
 }
