@@ -1,8 +1,7 @@
 public class Ferarri extends Auto{
 
-    int speed;
-    public Ferarri(int speed){
-        this.speed=speed;
+    public Ferarri(int speed) {
+        super(speed);
     }
     @Override
     public void fahren()

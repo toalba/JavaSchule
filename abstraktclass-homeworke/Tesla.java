@@ -1,8 +1,8 @@
 public class Tesla extends Auto{
 
-    int speed;
+    
     public Tesla(int speed){
-        this.speed=speed;
+        super(speed);
     }
     @Override
     public void fahren()

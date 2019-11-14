@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - level1",
+            "request": "launch",
+            "mainClass": "level1",
+            "projectName": "codingcontest"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - level1",
+            "request": "launch",
+            "mainClass": "level1",
+            "projectName": "9. Uebung - TicTacToe"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Absclass",
+            "request": "launch",
+            "mainClass": "Absclass",
+            "projectName": "9. Uebung - TicTacToe"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Pokermain",
             "request": "launch",
             "mainClass": "src.poker.Pokermain",
