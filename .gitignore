@@ -2,4 +2,5 @@
 /.recommenders/
 /.vscode/
 *class
+/bin/
 
