@@ -33,7 +33,7 @@ public class Dialog {
 				{
 					System.out.println("Spiel zu Ende");
 				}
-			try {
+		try {
 				int y = new Integer(zahlen[0]);
 				int x = new Integer(zahlen[1]);
 
@@ -53,6 +53,10 @@ public class Dialog {
 			} catch (TicTaCToeTakenException e) {
 				System.out.println("Feld bereits besetzt!");
 			}
+			finally{
+				scan.close();
+			}
+			
 
 		}
 		System.out.println("Das Spiel wurde beendet!");
