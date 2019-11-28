@@ -1,5 +1,4 @@
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -7,7 +6,7 @@ public class Exception {
 
     
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         try{
             String text = new String(Files.readAllBytes(Paths.get("/home/toalba/git/Javaschule/Exceptions/bsp.txt")), StandardCharsets.UTF_8);
             String[] arraynumbers = text.split(" ");
@@ -35,7 +34,17 @@ public class Exception {
         {
             System.out.println("HALLOOO, hast du nicht in Mathe aufgepasst? Nur natürliche Zahlen!");
         }
+        catch(java.lang.Exception e)
+        {
+            System.out.println("Unerwarteter Fehler, Cirtical System Error");
+            System.out.println(e);
+        }
+        finally
+        {
+            System.out.println("Wird immer Ausgeführt");
+        }
         
+        System.out.println("nach dem finnally");
         
 
     }
