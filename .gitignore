@@ -1,6 +1,6 @@
-/.metadata/
-/.recommenders/
-/.vscode/
+.metadata
+.recommenders
+.vscode
 *class
-/bin/
+bin
 
