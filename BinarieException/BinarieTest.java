@@ -14,6 +14,7 @@ public class BinarieTest{
         s.close(); 
         if(!binarzahl.matches("[0-1]+")) throw new BinarieException();
         dezimale=Integer.parseInt(binarzahl,2);
+        System.out.println("In Dezimal:");
         System.out.println(dezimale);
           
         }
