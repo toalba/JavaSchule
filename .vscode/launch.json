@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BinarieTest",
+            "request": "launch",
+            "mainClass": "BinarieTest",
+            "projectName": "9. Uebung - TicTacToe"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - level1",
             "request": "launch",
             "mainClass": "level1",
