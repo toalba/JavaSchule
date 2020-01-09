@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Ticketshop",
+            "request": "launch",
+            "mainClass": "Ticketshop",
+            "projectName": "9. Uebung - TicTacToe"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BinarieTest",
             "request": "launch",
             "mainClass": "BinarieTest",
